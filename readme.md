@@ -9,19 +9,20 @@
 ### :hibiscus:Montania, Giselli.
 - 30 años
 
-- (profesion)
-### :hibiscus:Fernandez, Micaela.
+- Estudiante.
+### :hibiscus:Fernández, Micaela.
 - 24 años
 
-- (profesion)
+- Estudiante.
 ### :hibiscus:Torrico, Michelle.
 - 18 años
 
-- Estudiante universitaria.
+- Estudiante.
 ## :loudspeaker: Temática de la página y público:
-La página comercializará anillos, pulseras, collares y aretes de plata con inscrustaciones de diamante.
+La página comercializará anillos, pulseras, collares y aretes de plata/oro con inscrustaciones de diamante.
 
-El público objetivo serán tanto hombres como mujeres con ganas de lucir cualquiera de nuestros accesorios.
+
+El público objetivo será cualquier persona que desee resaltar entre la multitud, luciendo nuestras hermosas piezas.
 
 ## :page_facing_up: Listado de páginas referentes:
 - [Bvlgari](https://www.bulgari.com/en-int/)
