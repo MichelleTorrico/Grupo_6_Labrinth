@@ -6,7 +6,7 @@
 
 ## Integrantes:
 
-### :hibiscus:Montana, Giselli.
+### :hibiscus:Montania, Giselli.
 - 30 años
 
 - (profesion)
