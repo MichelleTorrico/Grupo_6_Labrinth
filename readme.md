@@ -25,9 +25,10 @@ La página comercializará anillos, pulseras, collares y aretes de plata/oro con
 El público objetivo será cualquier persona que desee resaltar entre la multitud, luciendo nuestras hermosas piezas.
 
 ## :page_facing_up: Listado de páginas referentes:
-- [Bvlgari](https://www.bulgari.com/en-int/)
+- [Avant](https://avantjoyas.com//)
 - [Pandora](https://www.pandora.net/es-ar)
+- [Piaget](https://www.piaget.com/)
 
-Las páginas que utilizamos como referentes estan vinculadas no sólo con la temática del sitio y con el público objetivo, sino también por su diseño, las imagenes, el frond-end que utilizan, la experiencia del usuario. Recopilamos distintos elementos de cada una de las páginas.
+Las páginas que utilizamos como referentes estan vinculadas no sólo con la temática del sitio y con el público objetivo, sino también por su diseño, las imagenes, el frond-end que utilizan y la experiencia del usuario. Recopilamos distintos elementos de cada una de las páginas.
 
 ## :open_file_folder: Wireframe
