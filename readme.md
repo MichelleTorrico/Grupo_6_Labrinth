@@ -31,9 +31,16 @@ El público objetivo será cualquier persona que desee resaltar entre la multitu
 
 Las páginas que utilizamos como referentes estan vinculadas no sólo con la temática del sitio y con el público objetivo, sino también por su diseño, las imagenes, el frond-end que utilizan y la experiencia del usuario. Recopilamos distintos elementos de cada una de las páginas.
 
-## :open_file_folder: Wireframe
-- [Home]()
-- [Detalle de producto]()
+## :open_file_folder: Wireframes:
+- [Home](https://github.com/MichelleTorrico/Grupo_6_Labrinth/blob/master/wireframes/home.png)
+- [Detalle de producto](https://github.com/MichelleTorrico/Grupo_6_Labrinth/blob/master/wireframes/detalleproducto.png)
 - [Carrito]()
 - [Registro]()
 - [Carga producto]()
+
+## :nail_care: Diseño (en proceso):
+
+- [Logo](https://github.com/MichelleTorrico/Grupo_6_Labrinth/blob/master/design/logos/LogoLB.png)
+- [Colores](https://github.com/MichelleTorrico/Grupo_6_Labrinth/tree/master/design/colors)
+- Fuentes
+
