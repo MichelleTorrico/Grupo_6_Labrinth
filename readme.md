@@ -36,7 +36,7 @@ Las páginas que utilizamos como referentes estan vinculadas no sólo con la tem
 - [Detalle de producto](https://github.com/MichelleTorrico/Grupo_6_Labrinth/blob/master/wireframes/detalleproducto.png)
 - [Carrito]()
 - [Registro]()
-- [Carga producto]()
+- [Carga producto](https://github.com/MichelleTorrico/Grupo_6_Labrinth/blob/master/wireframes/CargaProducto.png)
 
 ## :nail_care: Diseño (en proceso):
 
