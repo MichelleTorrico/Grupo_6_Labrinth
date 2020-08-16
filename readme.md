@@ -29,7 +29,7 @@ El público objetivo será cualquier persona que desee resaltar entre la multitu
 - [Pandora](https://www.pandora.net/es-ar)
 - [Piaget](https://www.piaget.com/)
 - [Chanel](https://www.chanel.com/lx/joyeria/)
-- [Bulgari](https://www.bulgari.com/en-int/)
+- [Kylie Cosmetics](https://www.kyliecosmetics.com/)
 
 Las páginas que utilizamos como referentes estan vinculadas no sólo con la temática del sitio y con el público objetivo, sino también por su diseño, las imagenes, el frond-end que utilizan y la experiencia del usuario. Recopilamos distintos elementos de cada una de las páginas.
 
