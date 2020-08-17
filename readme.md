@@ -36,8 +36,8 @@ Las páginas que utilizamos como referentes estan vinculadas no sólo con la tem
 ## :open_file_folder: Wireframes:
 - [Home](https://github.com/MichelleTorrico/Grupo_6_Labrinth/blob/master/wireframes/home.png)
 - [Detalle de producto](https://github.com/MichelleTorrico/Grupo_6_Labrinth/blob/master/wireframes/detalleproducto.png)
-- [Carrito]()
-- [Registro]()
+- [Carrito](https://github.com/MichelleTorrico/Grupo_6_Labrinth/blob/master/wireframes/carrito.png)
+- [Registro](https://github.com/MichelleTorrico/Grupo_6_Labrinth/blob/master/wireframes/register.png)
 - [Carga producto](https://github.com/MichelleTorrico/Grupo_6_Labrinth/blob/master/wireframes/CargaProducto.png)
 
 ## :nail_care: Diseño (en proceso):
