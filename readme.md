@@ -19,7 +19,7 @@
 
 - Estudiante.
 ## :loudspeaker: Temática de la página y público:
-La página comercializará anillos, pulseras, collares y aretes de plata/oro con inscrustaciones de diamante.
+La página comercializará anillos, pulseras, collares y aretes de plata con inscrustaciones de diamante.
 
 
 El público objetivo será cualquier persona que desee resaltar entre la multitud, luciendo nuestras hermosas piezas.
