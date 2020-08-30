@@ -1,0 +1,94 @@
+/*
+--IMPORTS--
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+
+/*
+--VARIABLES--
+*/
+
+:root{
+   --color-violeta: #430A20;
+   --color-ropastel:#fca8f7;
+   --color-rosa:#cb7191;
+   --color-robebe: #f9c7f7;
+   --color-rochicle:#df9ac9;
+
+}
+
+
+/*
+--GENERALES--
+*/
+
+
+*{
+   box-sizing: border-box;
+   margin:0;
+}
+
+body{
+   font-family: 'Crimson Text', serif;
+}
+
+/*
+--HEADER--
+*/
+header{
+   padding:20px;
+}
+header .logo{
+  padding: 0;
+}
+header .iconos{
+   border-top: 1px solid gray;
+   border-bottom: 1px solid gray;
+}
+header nav{
+   width: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+
+header nav button.burger{
+   background-color: var(--color-violeta);
+   color: white;
+   border: none;
+   border-radius: 4px;
+   padding: 10px 15px;
+}
+
+
+div ul li i{
+   
+   margin-left: 1cm;
+   
+   color:var(--color-violeta);
+}
+div ul li i:hover{
+  
+   margin-left: 1cm;
+   color: var(--color-ropastel);
+}
+ul{
+   overflow: hidden;
+}
+ul li{
+   float: left;
+   list-style: none;
+   margin-top: 10px;
+   margin-left: 5px;
+}
+
+nav ul li a{
+   text-decoration: none;
+   margin-left: 2cm;
+   color:var(--color-violeta);
+}
+
+nav ul li a:hover{
+   text-decoration: none;
+   color:var(--color-ropastel);
+}
