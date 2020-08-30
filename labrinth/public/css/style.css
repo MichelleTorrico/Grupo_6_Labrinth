@@ -9,7 +9,7 @@
 */
 
 :root{
-   --color-violeta: #430A20;
+   --color-violeta: #430a20;
    --color-ropastel:#fca8f7;
    --color-rosa:#cb7191;
    --color-robebe: #f9c7f7;
@@ -17,34 +17,81 @@
 
 }
 
-
 /*
---GENERALES--
+-- GENERALES
 */
-
-
 *{
    box-sizing: border-box;
-   margin:0;
+   margin:0
 }
-
 body{
    font-family: 'Crimson Text', serif;
+   font-weight: 300;
+
+}
+a{
+   text-decoration: none;
+   color: var(--color-violeta);
+}
+a:hover{
+   color:var(--color-robebe);
+   text-decoration: none;
+}
+li{
+   list-style: none;
 }
 
+
 /*
---HEADER--
+---
+HEADER
+---
 */
+
 header{
-   padding:20px;
+   padding: 20px;
 }
-header .logo{
-  padding: 0;
+header .logo {
+   padding: 0;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   
 }
+
+header .logo a img{
+   max-width: 100%;
+
+   
+}
+
+header ul{
+   overflow: hidden;
+}
+header ul li{
+   float: left;
+   margin-top: 10px;
+   margin-left: 1cm;
+}
+
 header .iconos{
-   border-top: 1px solid gray;
-   border-bottom: 1px solid gray;
+   color: var(--color-violeta);
+   padding:0;
 }
+header div ul li i:hover{
+   color: var(--color-robebe);
+}
+header .options{
+   padding: 0;
+   width: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+header .options li:nth-child(1){
+   margin-left:0;
+}
+
 header nav{
    width: 100%;
    display: flex;
@@ -57,38 +104,67 @@ header nav button.burger{
    color: white;
    border: none;
    border-radius: 4px;
-   padding: 10px 15px;
+   padding: 7px 12px;
 }
 
-
-div ul li i{
-   
-   margin-left: 1cm;
+header nav ul li a{
    
    color:var(--color-violeta);
 }
-div ul li i:hover{
-  
-   margin-left: 1cm;
-   color: var(--color-ropastel);
-}
-ul{
-   overflow: hidden;
-}
-ul li{
-   float: left;
-   list-style: none;
-   margin-top: 10px;
-   margin-left: 5px;
+header nav ul li{
+   margin-top: 0cm;
+   margin-left: 0cm;
+   text-align: center;
 }
 
-nav ul li a{
-   text-decoration: none;
-   margin-left: 2cm;
-   color:var(--color-violeta);
+
+
+
+/* --- VERSION PARA TABLET (768px) --- */
+
+@media(min-width:768px){
+   header{
+      padding: 0px;
+   }
+   header .options{
+      padding: 1cm; 
+   }
+   header nav ul{
+         border-top:solid lightgray 0.5px;
+         border-bottom:solid lightgray 0.5px;
+   }
+   header nav ul li{
+      margin-left: 1cm;
+   }
+   header nav ul li:nth-child(1){
+      margin-left: 0cm;
+   
+   }
+   
 }
 
-nav ul li a:hover{
-   text-decoration: none;
-   color:var(--color-ropastel);
+/* --- VERSION PARA ESCRITORIO (1024px) --- */
+
+@media(min-width:1024px){
+   
+   header .logo {
+      padding: 0;
+      padding-left: 9cm;
+      
+      
+   }
+   header nav ul li{
+      margin-left: 2cm;
+      margin-right: 0.7cm;
+   
+   }
+   header nav ul li:nth-child(1){
+      margin-left: 1cm;
+   
+   }
+     
 }
+
+
+
+
