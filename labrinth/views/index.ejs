@@ -1,88 +1,206 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title> Labrinth</title>
-
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/style.css" />
-
-  <!--COMIENZA HEADER-->
-  <header class="container-fluid">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-8 col-lg-8 logo">
-          <!--LOGOTIPO-->
-          <a href=""><img src="images/logos/LogoHeader.png" alt=""></a>
-        </div>
-        <div class="col-12 col-md-4 col-lg-4 iconos">
-          <ul class='options'>
-            <li><i class="fas fa-search"></i></li>
-            <li><i class="fas fa-users"></i></li>
-            <li><i class="fas fa-shopping-cart"></i></li>
-          </ul>
-        </div>
-      </div>
-      <!--AQUI FINALIZA EL ROW-->
-
-      
-      <!--BARRA DE NAVEGACIÓN-->
-      <nav class="navbar-expand-md">
-        <button class="navbar-toggler burger" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i
-            class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-          <ul class="menu navbar-nav mr-auto">
-            <li><a href="">ANILLOS</a></li>
-            <li><a href="">BRAZALETES</a></li>
-            <li><a href="">COLLARES</a></li>
-            <li><a href="">PENDIENTES</a></li>
-            <li><a href="">COLECCIONES</a></li>
-            <li><a href="">REGALOS</a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  
-
-
-
-</head>
-
-
+  <%- include('partials/head') %> 
 
 <body>
+  <!--COMIENZA HEADER-->
+  <%- include('partials/header') %> 
+<br>
+  <!-- SECCION DEL SLIDER-->
+
+  <section id="slider">
+    <div class="container-all">
+
+        <input type="radio" id="1" name="image-slide" hidden/>
+        <input type="radio" id="2" name="image-slide" hidden/>
+        <input type="radio" id="3" name="image-slide" hidden/>
+
+        <div class="slide">
+
+            <div class="item-slide">
+                <img src="images/img1.jpg">
+            </div>
+
+            <div class="item-slide">
+                <img src="images/img2.jpg">
+            </div>
+
+            <div class="item-slide">
+                <img src="images/img3.jpg">
+            </div>
+
+        </div>
+
+        <div class="pagination">
+           
+            <label class="pagination-item" for="1">
+                <img src="images/img1.jpg">
+            </label>
+            
+            <label class="pagination-item" for="2">
+                <img src="images/img2.jpg">
+            </label>
+            
+            <label class="pagination-item" for="3">
+                <img src="images/img3.jpg">
+            </label>
+            
+        </div>
+        
+    </div>
+</section>
+
+<!--PRODUCTOS-->
+
+<div class="container">
+
+  <section>
+
+      <div class="row productos">
+
+          <div class="col-12 titulo">
+              <h2>OFERTAS</h2>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-3">
+              <div class="contenido">
+                  <figure>
+                      <a href=""><img src="images/products/anillo1.jpg" alt=""></a>
+                  </figure>
+                  <article>
+                      <h2>
+                          $4.500
+                      </h2>
+                      <span>10% OFF</span>
+                      <p>Anillo Jade Powerfull </p>
+                  </article>
+              </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-3">
+              <div class="contenido">
+                  <figure>
+                      <a href=""><img src="images/products/brazalete1.jpg" alt=""></a>
+                  </figure>
+                  <article>
+                      <h2>
+                          $3.500
+                      </h2>
+                      <span>15% OFF</span>
+                      <p>Brazalete Lucky Daisy</p>
+                  </article>
+              </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-3">
+              <div class="contenido">
+                  <figure>
+                      <a href=""><img src="images/products/brazalete2.jpg" alt=""></a>
+                  </figure>
+                  <article>
+                      <h2>
+                          $3.500
+                      </h2>
+                      <span>15% OFF</span>
+                      <p>Brazalete Silver Two</p>
+                  </article>
+              </div>
+          </div>
 
 
+          <div class="col-12 col-md-6 col-lg-3">
+              <div class="contenido">
+                  <figure>
+                      <a href=""><img src="images/products/anillo2.jpg" alt=""></a>
+                  </figure>
+                  <article>
+                      <h2>
+                          $4.500
+                      </h2>
+                      <span>10% OFF</span>
+                      <p>Anillo Diamond Wrist</p>
+                  </article>
+              </div>
+          </div>
+
+      </div>
 
 
+      <div class="row productos">
+
+          <div class="col-12 titulo">
+              <h2>TENDENCIAS</h2>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-3">
+              <div class="contenido">
+                  <figure>
+                      <a href=""><img src="images/products/collar1.jpg" alt=""></a>
+                  </figure>
+                  <article>
+                      <h2>
+                          $8.500
+                      </h2>
+                      <span>5% OFF</span>
+                      <p>Collar Queen & Princess</p>
+                  </article>
+              </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-3">
+              <div class="contenido">
+                  <figure>
+                      <a href=""><img src="images/products/aretes1.jpg" alt=""></a>
+                  </figure>
+                  <article>
+                      <h2>
+                          $2.500
+                      </h2>
+                      <span>10% OFF</span>
+                      <p>Aretes Wild & Savage</p>
+                  </article>
+              </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-3">
+              <div class="contenido">
+                  <figure>
+                      <a href=""><img src="images/products/aretes2.jpg" alt=""></a>
+                  </figure>
+                  <article>
+                      <h2>
+                          $3.500
+                      </h2>
+                      <span>10% OFF</span>
+                      <p>Aretes Lucky Daisy You</p>
+                  </article>
+              </div>
+          </div>
 
 
+          <div class="col-12 col-md-6 col-lg-3">
+              <div class="contenido">
+                  <figure>
+                      <a href=""><img src="images/products/collar2.jpg" alt=""></a>
+                  </figure>
+                  <article>
+                      <h2>
+                          $9.500
+                      </h2>
+                      <span>5% OFF</span>
+                      <p>Collar Two Hearts & Me</p>
+                  </article>
+              </div>
+          </div>
+
+      </div>
+
+  </section>
+
+</div>
 
 
-
-  <!--SCRIPTS BOOTSTRAP-->
-
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js "
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj "
-    crossorigin="anonymous "></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js "
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo "
-    crossorigin="anonymous "></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js "
-    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI "
-    crossorigin="anonymous "></script>
+<%- include('partials/footer') %>
 
 </body>
 
