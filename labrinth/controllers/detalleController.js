@@ -1,0 +1,6 @@
+module.exports = {
+    producto: (req, res) => {
+        
+        res.render('detalle' , {title : 'Detalle Producto'})
+    }
+}

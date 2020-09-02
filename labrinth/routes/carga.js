@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-let index = require('../controllers/indexController')
+let carga= require('../controllers/cargaController')
 
 
-router.get('/', index.home)
+router.get('/', carga.producto)
 
 module.exports = router;
