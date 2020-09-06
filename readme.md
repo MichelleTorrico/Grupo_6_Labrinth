@@ -53,7 +53,7 @@ Las páginas que utilizamos como referentes estan vinculadas no sólo con la tem
 
 ### :clipboard: [Tablero de Trello](https://trello.com/b/jG9AMdQz/grupo-6-labrinth)
 
-### :mag_right: Retrospectiva: [retro.md]()
+### :mag_right: Retrospectiva: [retro.md](https://github.com/MichelleTorrico/Grupo_6_Labrinth/blob/master/retro.md)
 
 ### :page_facing_up: Páginas (views)
 - HOME: index.ejs
