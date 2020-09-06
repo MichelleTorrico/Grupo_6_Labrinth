@@ -44,5 +44,20 @@ Las páginas que utilizamos como referentes estan vinculadas no sólo con la tem
 
 - [Logo](https://github.com/MichelleTorrico/Grupo_6_Labrinth/blob/master/design/logos/LogoLB.png)
 - [Colores](https://github.com/MichelleTorrico/Grupo_6_Labrinth/tree/master/design/colors)
-- Fuentes
+- Fuentes:
+         - [Julius Sans One](https://fonts.google.com/specimen/Julius+Sans+One?query=juliu)
 
+
+
+## :round_pushpin:Segundo Sprint (6/09)
+
+### :clipboard: [Tablero de Trello](https://trello.com/b/jG9AMdQz/grupo-6-labrinth)
+
+### :mag_right: Retrospectiva: [retro.md]()
+
+### :page_facing_up: Páginas (views)
+- HOME: index.ejs
+- DETALLE PRODUCTO: detalle.ejs        
+- CARRITO DE COMPRAS: carrito.ejs      
+- CARGA DE PRODUCTOS: carga.ejs         
+- REGISTRO DE USUARIOS: registro.ejs
