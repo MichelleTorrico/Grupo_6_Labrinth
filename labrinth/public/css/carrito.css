@@ -1,0 +1,63 @@
+@import "style.css";
+
+.carrito{
+    overflow: hidden;
+    border: solid 1px var(--color-violeta);
+}
+.carrito div.mensaje{
+    color: var(--color-rochicle);
+    background-color: var(--color-violeta);
+}
+.carrito figure img{
+    width: 100%;
+    float: left;
+}
+.carrito ul{
+    float: left;
+} 
+
+.totalCarrito ul{
+    overflow: hidden;
+}
+.totalCarrito ul li{
+    float: left;
+    margin-right: 50px;
+    
+}
+
+.totalCarrito button {
+    background-color: var(--color-violeta);
+    border: 0;
+    color: white;
+    width: 100%;
+    border-radius: 8px;
+    padding: 12px;
+    text-transform: uppercase;
+    margin-top: 30px;
+}
+
+/* --- VERSION PARA TABLET (768px) --- */
+
+@media(min-width:768px){
+    
+    .carrito figure img{
+        width: 15%;
+        float: left;
+    }
+    .carrito ul li{
+        margin-bottom: 20px;
+    }
+
+    .agregar {
+        overflow: hidden;
+    }
+}
+
+/* --- VERSION PARA ESCRITORIO (1024px) --- */
+ 
+@media(min-width:1024px){
+    .carrito ul{
+        
+        padding-right: 30px;
+    }
+}

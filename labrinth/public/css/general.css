@@ -1,0 +1,43 @@
+/*
+--IMPORTS--
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+
+/*
+--VARIABLES--
+*/
+
+:root{
+   --color-violeta: #430a20;
+   --color-ropastel:#fca8f7;
+   --color-rosa:#cb7191;
+   --color-robebe: #f9c7f7;
+   --color-rochicle:#df9ac9;
+
+}
+
+/*
+-- GENERALES
+*/
+*{
+   box-sizing: border-box;
+   margin:0
+}
+body{
+   font-family: 'Crimson Text', serif;
+   font-weight: 300;
+   
+
+}
+a{
+   text-decoration: none;
+   color: var(--color-violeta);
+}
+a:hover{
+   color:var(--color-robebe);
+   text-decoration: none;
+}
+li{
+   list-style: none;
+}

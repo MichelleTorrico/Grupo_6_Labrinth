@@ -1,0 +1,55 @@
+@import "style.css";
+@import "products.css";
+
+.detalle ul{
+    margin-top: 30px;
+    overflow: hidden;
+    font-size: 24px;
+}
+
+.detalle ul li{
+    float: left;
+    margin-right: 2px;
+}
+
+.detalle .contenido {
+    padding: 20px;
+    background-color: var(--color-robebe);
+}
+
+.detalle span,
+.detalle i {
+    color: var(--color-rosa);
+}
+
+.detalle .precio {
+    text-decoration: line-through;
+}
+
+
+.detalle button {
+    background-color: var(--color-violeta);
+    border: 0;
+    color: white;
+    width: 100%;
+    border-radius: 8px;
+    padding: 12px;
+    text-transform: uppercase;
+    margin-top: 30px;
+}
+
+
+ /* --- VERSION PARA ESCRITORIO (1024px) --- */
+ 
+ @media(min-width:1024px){
+    .detalle h2 {
+        font-size: 3em;
+        font-weight: 300;
+    }
+    .detalle img {
+        width: 80%;
+    }
+    .detalle .datos {
+        border-left: 2px solid grey;
+    }
+ }

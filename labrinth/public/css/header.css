@@ -1,0 +1,121 @@
+/*
+---
+HEADER
+---
+*/
+
+header{
+    padding: 10px;
+    
+ }
+ header .logo {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+ }
+ 
+ header .logo a img{
+    max-width: 100%;
+ 
+    
+ }
+ 
+ header ul{
+    overflow: hidden;
+ }
+ header ul li{
+    float: left;
+    margin-top: 10px;
+    margin-left: 1cm;
+ }
+ 
+ header .iconos{
+    color: var(--color-violeta);
+    padding:0;
+ }
+ header div ul li i:hover{
+    color: var(--color-robebe);
+ }
+ header .options{
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+ }
+ header .options li:nth-child(1){
+    margin-left:0;
+ }
+ 
+ header nav{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+ }
+ 
+ header nav button.burger{
+    background-color: var(--color-violeta);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 7px 12px;
+ }
+ 
+ header nav ul li a{
+    
+    color:var(--color-violeta);
+ }
+ header nav ul li{
+    margin-top: 0cm;
+    margin-left: 0cm;
+    text-align: center;
+ }
+
+ /* --- VERSION PARA TABLET (768px) --- */
+
+@media(min-width:768px){
+    header{
+       padding: 0px;
+    }
+    
+    header .options{
+       padding: 1cm; 
+    }
+    header nav ul{
+          border-top:solid lightgray 1px;
+          border-bottom:solid lightgray 1px;
+    }
+    header nav ul li{
+       margin-left: 1cm;
+    }
+    header nav ul li:nth-child(1){
+       margin-left: 0cm;
+    
+    }
+    
+ }
+ 
+ /* --- VERSION PARA ESCRITORIO (1024px) --- */
+ 
+ @media(min-width:1024px){ 
+    header .logo {
+       padding: 0;
+       padding-left: 9cm;
+       
+       
+    }
+    header nav ul li{
+       margin-left: 2cm;
+       margin-right: 0.7cm;
+    
+    }
+    header nav ul li:nth-child(1){
+       margin-left: 1cm;
+    
+    }
+ 
+    
+ }

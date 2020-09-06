@@ -8,8 +8,102 @@
       <!--COMIENZA HEADER-->
       <%- include('partials/header') %>
 
-    
 
+
+      <br><br>
+
+
+    <div class="container">
+        <section class="principal">
+          <div class="row carrito">
+            <div class="col-12 mensaje">
+                <h4>"Nombre del producto" se agregó a tu carrito.</h4>
+            </div>
+            <div class="col-12 contenido">
+              <div class="contenido text-left">
+                <div class="row">
+                    <div class="col-8 col-md-12 ">
+                      <form action="">
+                        
+                        <figure class="text-center">
+                            <img src="images/products/collar1.jpg" alt="Collar" class="img-fluid">
+                        </figure>
+                        <ul>
+                            <li><b>Producto</b></li>
+                            <li>Collar Queen & Princess</li>
+                        </ul>
+
+                        <ul>
+                            <li>Precio</li>
+                            <li>$8.500</li>
+                        </ul>
+
+                        <ul>
+                            <li>Cantidad</li>
+                            <li>
+                                  <label for=""></label>
+                                  <input type="number" class="form-control" name="cantidad">
+                              </li>
+                        </ul>
+
+                        <ul>
+                            <li>Subtotal</li>
+                            <li>$8.500</li>
+                        </ul>
+
+                        <ul>
+                          <li><button type="reset" class="btn btn-outline-secondary mr-3">Borrar</button></li>
+                        </ul>
+                      </form>
+                    </div>
+                  
+                </div>
+                
+            </div>
+            </div>
+            
+          </div>
+        </section>
+      </div>
+
+      <br> <br>
+
+
+      <div class="container">
+      <div class="totalCarrito">
+          <h3>Total carrito de compras</h3>
+          <ul>
+              <li>Sub total</li>
+              <li>$8.500</li>
+          </ul>
+
+          <ul>
+            <li>Envio</li>
+            <li><form action="" method="POST">
+                <p><label for=""></label></p>
+             <p><input type="radio" name="envio" value="S">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur perspiciatis pariatur temporibus neque veritatis nihil rerum quae sit ducimus, alias odio iste, aliquam molestias.</p>
+             <p><input type="radio" name="envio" value="N">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur perspiciatis pariatur temporibus neque veritatis nihil rerum quae sit ducimus, alias odio iste, aliquam molestias.</p>
+             <p><input type="radio" name="envio" value="N">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur perspiciatis pariatur temporibus neque veritatis nihil rerum quae sit ducimus, alias odio iste, aliquam molestias.</p>
+
+             <a href="">Calcular envío<i class="fas fa-truck"></i></a>
+         
+                 
+        </ul>
+
+        <ul>
+            <li>Total</li>
+            <li>$8.500</li>
+        </ul>
+
+        <button>Proceder al pago</button>
+      </form>
+      <button>Seguir comprando</button>
+    </div>
+</div>
+
+
+      <br><br>
+      
       <%- include('partials/footer') %>
 </body>
 </html>

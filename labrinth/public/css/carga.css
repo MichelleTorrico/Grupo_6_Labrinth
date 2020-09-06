@@ -1,0 +1,30 @@
+@import "style.css";
+
+.cargaProducto h3{
+    color: var(--color-violeta);
+    
+}
+
+.carga{
+    overflow: hidden;
+    border-top: solid 2px var(--color-violeta);
+}
+.carga div.mensaje{
+    color: var(--color-rochicle);
+    background-color: var(--color-violeta);
+}
+
+.carga ul{
+    float: left;
+} 
+
+.botonAgregar{
+    border-radius: .25rem;
+    border-color: var(--color-violeta);
+    color: var(--color-violeta);
+}
+.botonAgregar:hover{
+    background-color: var(--color-violeta);
+    border-color: var(--color-violeta);
+    color:white;
+}
