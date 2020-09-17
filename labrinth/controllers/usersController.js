@@ -5,5 +5,12 @@ module.exports = {
             title : 'Registrarse',
             css: 'registro.css'
         })
+    },
+    login: (req, res) => {
+        
+        res.render('login' , {
+            title : 'Iniciar sesión',
+            css: 'registro.css'
+        })
     }
 }
