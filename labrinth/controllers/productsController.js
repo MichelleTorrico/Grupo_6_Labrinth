@@ -29,5 +29,12 @@ module.exports = {
             title: "Agregar producto",
             css:"carga.css"
         })
-}
-}
+},
+
+    editar:function(req,res){
+        res.render('productsEdit',{
+            title: "Administrar productos",
+            css:"products.css",
+            productos: dbProductos
+        })
+}}

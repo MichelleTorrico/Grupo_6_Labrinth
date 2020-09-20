@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('partials/head') %> 
+
+<body>
+  <!--COMIENZA HEADER-->
+  <%- include('partials/header') %> 
+<br>
+
+
+<section class="principal">
+    <div class="container">
+        <div class="row productos">
+          <div class="col-12 titulo">
+            <h2><%= title %></h2>
+          </div>
+
+          <% productos.forEach(producto => { %>
+ 
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="contenido">
+              <figure>
+                <a href="/products/detalle/<%= producto.id %> "
+                  ><img src="/images/products/<%= producto.imagen %> " alt=""
+                /></a>
+              </figure>
+              <article>
+                <h2>
+                  $<%- (producto.precio - producto.precio * producto.descuento / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %>
+                </h2>
+                <% if (producto.descuento !=0) { %>
+                  <span><%= producto.descuento %>% OFF</span>
+                <% } %>
+             
+                <p><%= producto.nombre %> </p>
+
+                <div class="d-flex justify-content-around">
+                    <form action="/products/show/<%= producto.id %>/show" method="GET">
+                    <button class="btn btn-outline-light">
+                        <h4 class="fas fa-info-circle text-info"></h4>
+                    </button>
+                    </form>
+                    <form action="/products/show/<%= producto.id %>/edit" method="GET">
+                        <button class="btn btn-outline-light">
+                            <h4 class="fas fa-edit text-primary"></h4>
+                        </button>
+                    </form>
+                    <form action="/products/delete/<%= producto.id %>?_method=DELETE"
+                        method="POST">
+                        <button class="btn btn-outline-light" type="submit">
+                            <h4 class="fas fa-trash-alt text-danger"></h4>
+                        </button>
+                    </form>
+                </div>
+                
+              </article>
+            </div>
+          </div>
+          <% }) %>
+          
+        </div>
+
+        
+        </div>
+    </div>
+  </section>
+
+
+
+<%- include('partials/footer') %>
+
+</body>
+
+</html>
