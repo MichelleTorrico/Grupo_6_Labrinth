@@ -52,153 +52,82 @@
 
 <!--PRODUCTOS-->
 
-<div class="container">
-
-  <section>
-
-      <div class="row productos">
-
+<section class="principal">
+    <div class="container">
+        <div class="row productos">
           <div class="col-12 titulo">
-              <h2>OFERTAS</h2>
+            <h2>Ofertas</h2>
           </div>
 
+          <% ofertas.forEach(producto => { %>
+ 
           <div class="col-12 col-md-6 col-lg-3">
-              <div class="contenido">
-                  <figure>
-                      <a href=""><img src="images/products/anillo1.jpg" alt=""></a>
-                  </figure>
-                  <article>
-                      <h2>
-                          $4.500
-                      </h2>
-                      <span>10% OFF</span>
-                      <p>Anillo Jade Powerfull </p>
-                  </article>
-              </div>
+            <div class="contenido">
+              <figure>
+                <a href="/products/detalle/<%= producto.id %> "
+                  ><img src="/images/products/<%= producto.imagen %> " alt=""
+                /></a>
+              </figure>
+              <article>
+                <h2>
+                  $<%- (producto.precio - producto.precio * producto.descuento / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %>
+                </h2>
+                <% if (producto.descuento !=0) { %>
+                  <span><%= producto.descuento %>% OFF</span>
+                <% } %>
+             
+                <p><%= producto.nombre %> </p>
+                
+              </article>
+            </div>
           </div>
+          <% }) %>
+          
+        </div>
 
-          <div class="col-12 col-md-6 col-lg-3">
-              <div class="contenido">
-                  <figure>
-                      <a href=""><img src="images/products/brazalete1.jpg" alt=""></a>
-                  </figure>
-                  <article>
-                      <h2>
-                          $3.500
-                      </h2>
-                      <span>15% OFF</span>
-                      <p>Brazalete Lucky Daisy</p>
-                  </article>
-              </div>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-3">
-              <div class="contenido">
-                  <figure>
-                      <a href=""><img src="images/products/brazalete2.jpg" alt=""></a>
-                  </figure>
-                  <article>
-                      <h2>
-                          $3.500
-                      </h2>
-                      <span>15% OFF</span>
-                      <p>Brazalete Silver Two</p>
-                  </article>
-              </div>
-          </div>
-
-
-          <div class="col-12 col-md-6 col-lg-3">
-              <div class="contenido">
-                  <figure>
-                      <a href=""><img src="images/products/anillo2.jpg" alt=""></a>
-                  </figure>
-                  <article>
-                      <h2>
-                          $4.500
-                      </h2>
-                      <span>10% OFF</span>
-                      <p>Anillo Diamond Wrist</p>
-                  </article>
-              </div>
-          </div>
-
-      </div>
-
-
-      <div class="row productos">
-
-          <div class="col-12 titulo">
-              <h2>TENDENCIAS</h2>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-3">
-              <div class="contenido">
-                  <figure>
-                      <a href=""><img src="images/products/collar1.jpg" alt=""></a>
-                  </figure>
-                  <article>
-                      <h2>
-                          $8.500
-                      </h2>
-                      <span>5% OFF</span>
-                      <p>Collar Queen & Princess</p>
-                  </article>
-              </div>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-3">
-              <div class="contenido">
-                  <figure>
-                      <a href=""><img src="images/products/aretes1.jpg" alt=""></a>
-                  </figure>
-                  <article>
-                      <h2>
-                          $2.500
-                      </h2>
-                      <span>10% OFF</span>
-                      <p>Aretes Wild & Savage</p>
-                  </article>
-              </div>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-3">
-              <div class="contenido">
-                  <figure>
-                      <a href=""><img src="images/products/aretes2.jpg" alt=""></a>
-                  </figure>
-                  <article>
-                      <h2>
-                          $3.500
-                      </h2>
-                      <span>10% OFF</span>
-                      <p>Aretes Lucky Daisy You</p>
-                  </article>
-              </div>
-          </div>
-
-
-          <div class="col-12 col-md-6 col-lg-3">
-              <div class="contenido">
-                  <figure>
-                      <a href=""><img src="images/products/collar2.jpg" alt=""></a>
-                  </figure>
-                  <article>
-                      <h2>
-                          $9.500
-                      </h2>
-                      <span>5% OFF</span>
-                      <p>Collar Two Hearts & Me</p>
-                  </article>
-              </div>
-          </div>
-
-      </div>
-
+        
+        </div>
+    </div>
   </section>
 
-</div>
 
+  <section class="principal">
+    <div class="container">
+        <div class="row productos">
+          <div class="col-12 titulo">
+            <h2>Tendencias</h2>
+          </div>
+
+          <% tendencias.forEach(producto => { %>
+ 
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="contenido">
+              <figure>
+                <a href="/products/detalle/<%= producto.id %> "
+                  ><img src="/images/products/<%= producto.imagen %> " alt=""
+                /></a>
+              </figure>
+              <article>
+                <h2>
+                  $<%- (producto.precio - producto.precio * producto.descuento / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %>
+                </h2>
+                <% if (producto.descuento !=0) { %>
+                  <span><%= producto.descuento %>% OFF</span>
+                <% } %>
+             
+                <p><%= producto.nombre %> </p>
+                
+              </article>
+            </div>
+          </div>
+          <% }) %>
+          
+        </div>
+
+        
+        </div>
+    </div>
+  </section>
 
 <%- include('partials/footer') %>
 
