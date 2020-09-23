@@ -61,3 +61,21 @@ Las páginas que utilizamos como referentes estan vinculadas no sólo con la tem
 - CARRITO DE COMPRAS: carrito.ejs      
 - CARGA DE PRODUCTOS: carga.ejs         
 - REGISTRO DE USUARIOS: registro.ejs
+
+## :round_pushpin: Tercer Sprint (21/09)
+
+### :mag_right: Retrospectiva: [retro.md](https://github.com/MichelleTorrico/Grupo_6_Labrinth/blob/master/retro.md)
+
+### :clipboard: [Tablero de Trabajo](https://trello.com/b/jG9AMdQz/grupo-6-labrinth)
+
+
+### :fire: Aplicación Node + Express + EJS
+- Home
+- Listado de productos                          /productos
+- Detalle del producto                          /productos/detalle/:id
+- Formulario de carga y edición de productos    /productos/admin   &   /productos/edit/:id
+- Formulario de registro y login                /users/registro & /users/login
+
+
+### :briefcase: Archivos JSON [products.json](https://github.com/MichelleTorrico/Grupo_6_Labrinth/blob/master/labrinth/data/productosDataBase.json) y [users.json](https://github.com/MichelleTorrico/Grupo_6_Labrinth/blob/master/labrinth/data/usersDataBase.json)
+
