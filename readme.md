@@ -77,5 +77,7 @@ Las páginas que utilizamos como referentes estan vinculadas no sólo con la tem
 - Formulario de registro y login                /users/registro & /users/login
 
 
-### :briefcase: Archivos JSON [products.json](https://github.com/MichelleTorrico/Grupo_6_Labrinth/blob/master/labrinth/data/productosDataBase.json) y [users.json](https://github.com/MichelleTorrico/Grupo_6_Labrinth/blob/master/labrinth/data/usersDataBase.json)
+### :briefcase: Archivos JSON [products.json](https://github.com/MichelleTorrico/Grupo_6_Labrinth/blob/master/labrinth/data/productosDataBase.json) y [users.json](https://github.com/MichelleTorrico/Grupo_6_Labrinth/blob/master/labrinth/data/dbUsers.json)
+
+
 

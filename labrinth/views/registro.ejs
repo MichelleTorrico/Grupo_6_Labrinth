@@ -5,39 +5,73 @@
       <%- include('partials/head') %> 
     
     <body>
-        <form class="col-12 col-md-8 formulario">
+        <form class="col-12 col-md-8 formulario" action="" method="POST" enctype="multipart/form-data">
     
             <h1>Crear cuenta</h1>
              <div class="contenedor">
              
              <div class="input-contenedor">
+
+
+                
+                    
+
                  <i class="fas fa-user icon"></i>
-                 <input type="text" placeholder="Nombre Completo">
-                 
+                 <label for="nombreCompleto"></label>
+                 <input type="text" class="form-control <%= (typeof old != 'undefined' && old.nombreCompleto)?"is-valid":(typeof errors != 'undefined' && errors.nombreCompleto)?"is-invalid": ""  %>"
+                 id="nombreCompleto" placeholder="Nombre Completo" value="<%= (typeof old != 'undefined' && old.nombreCompleto)?old.nombreCompleto:'' %>" name="nombreCompleto"/>
+                 <small												
+                    class="text-danger"><%= (typeof errors != 'undefined' && errors.nombre)?errors.nombre.msg: "" %>
+				 </small>
                  </div>
                  
                  <div class="input-contenedor">
                  <i class="fas fa-envelope icon"></i>
-                 <input type="text" placeholder="Correo Electronico">
+                 <label for="email"></label>
+                 <input type="text" class="form-control <%= (typeof old != 'undefined' && old.email && !errors.email)?"is-valid":(typeof errors != 'undefined' && errors.email)?"is-invalid": ""  %>"
+                 id="email"
+                 value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>" placeholder="Correo Electronico" name="email"/>
                  
+                 <small							
+                 	class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %>
+				 </small>
                  </div>
                  
                  <div class="input-contenedor">
                 <i class="fas fa-key icon"></i>
-                 <input type="password" placeholder="Contraseña">
+                <label for="pass"></label>
+                 <input type="password" class="form-control <%= (typeof errors != 'undefined' && errors.pass)?"is-invalid": ""  %>"
+                 id="pass" placeholder="Contraseña" name="pass"/>
+                 <small												
+                 class="text-danger"><%= (typeof errors != 'undefined' && errors.pass)?errors.pass.msg: "" %>
+				 </small>
                  
                  </div>
         
                  <div class="input-contenedor">
                     <i class="fas fa-key icon"></i>
-                     <input type="password" placeholder="Repetir contraseña">
-                     
+                    <label for="pass2"></label>
+                     <input type="password" class="form-control <%= (typeof errors != 'undefined' && errors.pass2)?"is-invalid": ""  %>"
+                     id="pass2" placeholder="Repetir contraseña" name="pass2"/>
+                     <small
+                     class="text-danger"><%= (typeof errors != 'undefined' && errors.pass2)?errors.pass2.msg: "" %>
+					 </small>
                      </div>
+                     <div class="custom-file mt-4 input-contenedor">
+                    
+                        <input type="file" class="custom-file-input " id="customFileLang"
+                            lang="es" name="avatar">
+                        <label class="custom-file-label" for="customFileLang">Subir foto de perfil</label>
+                        <small
+                            class="text-danger"><%= (typeof errorFormato != 'undefined')?errorFormato: "" %>
+                        </small>
+                    </div>
                  <input type="submit" value="Registrate" class="button"> <br> <br>
                  <p>Al registrarte, aceptas nuestras <a class="link" href="">Condiciones de uso</a>  y <a class="link" href="">Política de privacidad</a>.</p>
                  <p>¿Ya tienes una cuenta?<a class="link" href="/users/login">Iniciar Sesion</a></p>
                  <p><a class="link" href="/">Volver a inicio.</a></p>
              </div>
+
             </form>
         
          
