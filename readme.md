@@ -80,4 +80,20 @@ Las páginas que utilizamos como referentes estan vinculadas no sólo con la tem
 ### :briefcase: Archivos JSON [products.json](https://github.com/MichelleTorrico/Grupo_6_Labrinth/blob/master/labrinth/data/productosDataBase.json) y [users.json](https://github.com/MichelleTorrico/Grupo_6_Labrinth/blob/master/labrinth/data/dbUsers.json)
 
 
+## :round_pushpin: Cuarto Sprint (05/10)
 
+### :mag_right: Retrospectiva: [retro.md](https://github.com/MichelleTorrico/Grupo_6_Labrinth/blob/master/retro.md)
+
+### :clipboard: [Tablero de Trabajo](https://trello.com/b/jG9AMdQz/grupo-6-labrinth)
+
+
+### :hotsprings: Registro de usuarios.
+
+- Se puede acceder desde "users/registro" o desde el link de registrarse en el formulario de login. En caso de que un campo sea completado incorrectamente apareceran mensajes indicando los errores. La contraseña se guarda encriptada.
+
+### :outbox_tray: Login de usuarios.
+
+- Se puede acceder desde "users/login" o desde el icono de login en "/". Al apretar en "Recordarme" la sesión permanecerá iniciada aun si el navegador se cierra.
+
+### :key: Contraseñas de usuarios:
+- En todos los casos la contraseña es: 123456
