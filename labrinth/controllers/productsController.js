@@ -2,26 +2,43 @@ const path = require('path');
 const dbProductos = require(path.join(__dirname,'..','data','dbProductos'));
 const fs = require('fs');
 
+const {validationResult} = require('express-validator');
+const db = require('../database/models');
+
 
 
 
 module.exports = {
     listar:function(req,res){
-        res.render('products',{
-            title: "Productos",
-            css:"products.css",
-            productos: dbProductos
+        db.Products.findAll()
+        .then(result => {
+            res.render('products', {
+                title: "Productos",
+                productos: result,
+                css:'products.css'
+            })
         })
     },
     detalle:function(req,res){
-        idProducto = req.params.id;
-        let producto = dbProductos.filter(producto=>{
-            return producto.id == idProducto
+        db.Products.findOne({
+            where : {
+                id: req.params.id
+            },
+            include : [
+                {
+                    association: 'categorias'
+                }
+            ]
         })
+       
+        .then(function(producto){
         res.render('detalle',{
             title:"Detalle del Producto",
             css:"detalle.css",
-            producto:producto[0]
+            producto:producto
+           
+            })
+            
         })
     },
     agregar:function(req,res){
@@ -92,34 +109,36 @@ show:function(req,res){
     })
 
 },
-editar:function(req,res){
+edit: function (req, res, next) {
+    db.Products.update({
+        nombre : req.body.name,
+        precio: req.body.price,
+        descuento: req.body.discount,
+        descripcion: req.body.description,
+        categories_id: req.body.category,
+        imagen: (req.files[0]) ? req.files[0].filename : req.body.image
+    },
+        {
+            where: {
+                id: req.params.id
+            }
+        })
 
-    let idProducto = req.body.id;
-
-    dbProductos.forEach(producto =>{
-        if(producto.id == idProducto){
-            producto.id = Number(req.body.id),
-            producto.nombre = req.body.name.trim(),
-            producto.precio = Number(req.body.price),
-            producto.descuento = Number(req.body.discount),
-            producto.categoria = req.body.category.trim(),
-            producto.descripcion = req.body.description.trim(),
-            producto.imagen = producto.imagen
-        }
-    })
-    fs.writeFileSync(path.join(__dirname,'../data/productosDataBase.json'),JSON.stringify(dbProductos),'utf-8');
-    res.redirect('/products/show/'+ idProducto + '/show')
+        .then(() => {
+            res.redirect('/products/admin')
+       })
 },
-eliminar:function(req,res){
-    let idProducto = req.params.id;
-    dbProductos.forEach(producto =>{
-        if(producto.id == idProducto){
-            var aEliminar = dbProductos.indexOf(producto)
-            dbProductos.splice(aEliminar,1)
+eliminar: function (req, res) {
+    db.Products.destroy({
+        where: {
+            id: req.params.id
         }
     })
-    fs.writeFileSync(path.join(__dirname,'../data/productosDataBase.json'),JSON.stringify(dbProductos))
-    res.redirect('/products/admin')
-}
-
-}
+    .then(() => {
+        res.redirect('/products/admin')
+    })
+    .catch(errores => {
+        res.send(errores)
+    })
+},
+};

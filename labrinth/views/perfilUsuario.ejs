@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('partials/head') %>
+
+<body>
+  <!--COMIENZA HEADER-->
+  <%- include('partials/header') %>
+  <br>
+
+  <div class="container perfilUsuario">
+    <section class="principal">
+        <div class="col-12 mensaje">
+            <h3>PERFIL DEL USUARIO</h3>
+        </div>
+        <div class="row perfil">
+
+            <div class="col-12 contenido">
+                <div class="contenido text-left">
+                    <div class="row">
+                        <div class="col-12 "> <br>
+                            <h4 class="mb-3">Datos:</h4>
+                            <form action="/users/actPerfil/<%= usuario.id %> ?_method=PUT" method="POST"
+                              enctype="multipart/form-data">
+                              <div class="form-row">
+                                <div class="col-12 col-md-4 mt-3 d-flex flex-column align-items-center">
+                                  <% if (usuario.rol == "admin") { %>
+                                  <img src="/images/logos/<%= usuario.avatar %> " class="avatarImg" alt="avatar" width="75%"
+                                    style="object-fit: cover; object-position: top;">
+                                  <% } else { %>
+                                  <img src="/images/users/<%= usuario.avatar %> " class="avatarImg" alt="avatar" width="75%"
+                                    style="object-fit: cover; object-position: top;">
+                                  <% } %>
+                                  <div class="form-group w-75">
+                                    <input type="file" class="form-control" id="avatar" name="avatar">
+                                  </div>
+                                </div>
+                                <div class="col-12 col-md-8 ">
+                                  <div class="form-row mt-2">
+                                    <div class="form-group col-12 col-md-6 ">
+                                      <label for="inputNombre">Nombre Completo</label>
+                                      <input type="text" name="nombreCompleto" class="form-control" id="nombreCompleto"
+                                        value="<%= usuario.nombre %>" disabled>
+                                    </div> 
+                                    <div class="form-group col-12 col-md-6">
+                                      <label for="imputEmail">Email</label>
+                                      <input type="email" name="email" class="form-control" id="email"
+                                        value=<%= usuario.email %> disabled>
+                                    </div>
+                                    </div>
+                                  </div>
+                                  <div class="d-md-flex justify-content-end mt-5">
+                                    <button type="button" class="btn-sm btn-secondary m-1"><a href="/" class="text-light">Salir
+                                        sin
+                                        guardar</a></button>
+                                    <button type="submit" class="btn-sm btn-primary botonAct">Actualizar datos</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </form>
+                        
+                            <div class="col-12 col-md-4 d-flex justify-content-center">
+                              <form action="/users/delete/<%= usuario.id %>?_method=DELETE" method="POST">
+                                <button type="submit" class="btn-sm btn-danger">Darse de baja</button>
+                              </form>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+</div>
+</section>
+</div>
+<br><br>
+
+
+<%- include('partials/footer') %>
+
+</body>
+
+</html>
+    
+ 
