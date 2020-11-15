@@ -7,7 +7,7 @@ router.get('/', products.listar);
 router.get('/detalle/:id', products.detalle);
 
 router.get('/admin', products.administrar);
-router.put('/edit/:id',products.editar)
+router.put('/edit/:id',products.edit)
 router.delete('/delete/:id',products.eliminar)
 
 router.get('/carga', products.agregar);

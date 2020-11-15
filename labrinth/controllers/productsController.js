@@ -10,7 +10,7 @@ const db = require('../database/models');
 
 module.exports = {
     listar:function(req,res){
-        db.Products.findAll()
+        db.Productos.findAll()
         .then(result => {
             res.render('products', {
                 title: "Productos",
@@ -20,13 +20,13 @@ module.exports = {
         })
     },
     detalle:function(req,res){
-        db.Products.findOne({
+        db.Productos.findOne({
             where : {
                 id: req.params.id
             },
             include : [
                 {
-                    association: 'categorias'
+                    association: 'categoria'
                 }
             ]
         })
@@ -110,7 +110,7 @@ show:function(req,res){
 
 },
 edit: function (req, res, next) {
-    db.Products.update({
+    db.Productos.update({
         nombre : req.body.name,
         precio: req.body.price,
         descuento: req.body.discount,
@@ -129,7 +129,7 @@ edit: function (req, res, next) {
        })
 },
 eliminar: function (req, res) {
-    db.Products.destroy({
+    db.Productos.destroy({
         where: {
             id: req.params.id
         }
