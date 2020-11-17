@@ -32,14 +32,27 @@ module.exports = {
         })
        
         .then(function(producto){
+
+
+            db.Productos.findAll({
+                where: {categories_id: producto.categories_id}
+            })
+
+            .then(function(productos){
+
         res.render('detalle',{
             title:"Detalle del Producto",
             css:"detalle.css",
-            producto:producto
+            producto:producto,
+            productos: productos
            
             })
-            
+        
         })
+    })
+    
+
+
     },
     agregar:function(req,res){
         res.render('carga',{
@@ -69,10 +82,13 @@ publicar:function(req,res){
 },
 
     administrar:function(req,res){
-        res.render('productsAdmin',{
-            title: "Administrar productos",
-            css:"products.css",
-            productos: dbProductos
+        db.Productos.findAll()
+        .then(result => {
+            res.render('productsAdmin', {
+                title: "Administrar productos",
+                productos: result,
+                css:'products.css'
+            })
         })
 },
 show:function(req,res){

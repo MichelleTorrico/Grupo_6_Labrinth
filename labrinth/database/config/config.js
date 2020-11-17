@@ -2,7 +2,7 @@ module.exports = {
   "development": {
     "username": "root",
     "password": null,
-    "database": "labrinth_db",
+    "database": "mydb",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

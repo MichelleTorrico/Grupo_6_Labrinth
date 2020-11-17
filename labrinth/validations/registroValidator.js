@@ -4,7 +4,7 @@ const dbUsers = require('../data/dbUsers.json')
 
 module.exports = [
     
-    check('nombreCompleto')
+  /*  check('nombreCompleto')
     .isLength({
         min:1
     })
@@ -42,5 +42,5 @@ module.exports = [
     })
     .withMessage("Las contraseñas no coinciden"),
 
-    
+  */  
 ]

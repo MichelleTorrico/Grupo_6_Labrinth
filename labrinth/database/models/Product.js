@@ -17,7 +17,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull : false
         },
         precio : {
-            type : dataTypes.DECIMAL(5, 2).UNSIGNED,
+            type : dataTypes.INTEGER(10).UNSIGNED,
             allowNull : false
         },
         descuento : {
@@ -39,8 +39,8 @@ module.exports = (sequelize, dataTypes) => {
     let config = {
 
         tableName : "products",
-        timestamps : true,
-        underscored : true
+        timestamps : false,
+        
         
        
 

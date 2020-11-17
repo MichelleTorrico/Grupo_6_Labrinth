@@ -4,6 +4,8 @@ const bcrypt = require('bcrypt');
 
 const {validationResult} = require('express-validator');
 const dbUsers = require(path.join(__dirname,'..','data','dbUsers.js'))
+const db = require('../database/models');
+
 
 module.exports = {
     nuevoUsuario: (req, res) => {
@@ -18,8 +20,8 @@ module.exports = {
         
         if(errors.isEmpty()){
 
-            db.Users.create({
-                nombreCompleto: req.body.nombreCompleto.trim(),
+            db.Usuarios.create({
+                nombre_completo: req.body.nombreCompleto.trim(),
                 email: req.body.email.trim(),
 		        avatar: (req.files[0])?req.files[0].filename:"default.png",
                 password:bcrypt.hashSync(req.body.pass,10),
@@ -53,7 +55,7 @@ module.exports = {
         let errors = validationResult(req);
         if(errors.isEmpty()){
 
-            db.Users.findOne({
+            db.Usuarios.findOne({
                 where : {
                     email : req.body.email
                 }
@@ -88,7 +90,7 @@ module.exports = {
 
 
     perfil:function(req,res){
-        db.Users.findByPk(req.session.user.id)
+        db.Usuarios.findByPk(req.session.user.id)
         .then(user => {
             res.render('perfilUsuario',{
                 title:"Perfil de usuario",
@@ -101,7 +103,7 @@ module.exports = {
         })
     },
     actPerfil:function(req,res){
-        db.Users.update({
+        db.Usuarios.update({
                 nombreCompleto: req.body.nombreCompleto,
                 email: req.body.email,
                 avatar:(req.files[0])?req.files[0].filename:req.session.user.avatar
@@ -122,7 +124,7 @@ module.exports = {
     },
     delete: function(req,res){
        
-        db.Users.destroy({
+        db.Usuarios.destroy({
             where : {
                 id : req.params.id
             }

@@ -3,7 +3,7 @@ const dbUsers = require('../data/dbUsers.json');
 const {check,body} = require('express-validator');
 const bcrypt = require('bcrypt');
 
-module.exports = [
+module.exports = [/*
     
     check('email')
     .isEmail()
@@ -44,5 +44,5 @@ module.exports = [
             return true
         }
     })
-    .withMessage('Contraseña incorrecta')
+    .withMessage('Contraseña incorrecta')*/
 ]
