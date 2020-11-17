@@ -66,7 +66,7 @@ module.exports = {
                         nombreCompleto: user.nombreCompleto,
                         email: user.email,
                         avatar:user.avatar,
-			rol:user.rol
+			            rol:user.rol
                 }
                  if(req.body.recordar){
                 res.cookie('userLabrinth',req.session.user,{maxAge:1000*60*60})

@@ -61,24 +61,25 @@ module.exports = {
         })
 },
 publicar:function(req,res){
-   let lastID = 1;
-   dbProductos.forEach(producto=>{
-       if(producto.id > lastID){
-           lastID = producto.id
-       }
-   })
-   let newProduct = {
-       id:lastID +1,
-       nombre: req.body.name.trim(),
-       precio: Number(req.body.price),
-       descuento:Number(req.body.discount),
-       categoria:req.body.category.trim(),
-       descripcion:req.body.description.trim(),
-       imagen: req.body.image
-   }
-   dbProductos.push(newProduct);
-   fs.writeFileSync(path.join(__dirname,"..","data","productosDataBase.json"),JSON.stringify(dbProductos),'utf-8')
-   res.redirect('/products')
+    let errors = validationResult(req);
+
+    if(errors.isEmpty()){
+        db.Productos.create({
+            nombre: req.body.name.trim(),
+           precio: Number(req.body.price),
+           descuento:Number(req.body.discount),
+           categoria:req.body.category.trim(),
+          descripcion:req.body.description.trim(),
+           imagen: req.body.image
+        })
+        
+        .then(()=>{
+            return res.redirect('/products')
+        })
+        .catch(error =>{
+            res.send(error)
+        })
+    }
 },
 
     administrar:function(req,res){
