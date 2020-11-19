@@ -2,6 +2,8 @@ const {check,validationResult,body} = require('express-validator');
 
 const dbUsers = require('../data/dbUsers.json')
 
+let db = require('../database/models');
+
 module.exports = [
     
   /*  check('nombreCompleto')

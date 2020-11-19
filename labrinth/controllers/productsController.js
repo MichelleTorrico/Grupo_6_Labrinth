@@ -109,22 +109,61 @@ show:function(req,res){
         showEdit = "show";
     }
 
-    let resultado = dbProductos.filter(producto =>{
-        return producto.id == idProducto
+    // //let posicion = productos.filter(producto =>{
+    //     return producto.id == idProducto
+    // })//
+    
+
+   let producto = db.Productos.findByPk(idProducto,{
+        include: [
+            {
+                association : 'categoria'
+            }
+        ]
     })
 
+    let minimo = db.Productos.min('id')
+    let maximo = db.Productos.max('id')
+
+    let productos = db.Productos.findAll({
+        include: [
+            {
+                association : 'categoria'
+            }
+        ]
+    })
+
+
+    
+    Promise.all([ producto, productos, minimo, maximo])
+       .then(([ producto, productos, minimo ,maximo]) =>{
+        console.log(minimo+" -- "+ producto.id+" -- "+ maximo)
+
+let posicion 
+    for (let i = 0; i< productos.length; i ++){
+        console.log (i)
+        if (productos [i].id==idProducto){
+            posicion=i
+            break
+        }
+    }
     res.render('productsShow',{
         title: "Ver / Editar Producto",
         css: 'products.css',
-        productos: dbProductos,
-        total: dbProductos.length,
-        producto: resultado[0],
+        posicion: posicion,
+        productos: productos,
+        producto: producto,
         activeDetail:activeDetail,
         activeEdit:activeEdit,
         showEdit:showEdit,
-        showDetail:showDetail
+        showDetail:showDetail,
+        minimo: minimo,
+        maximo: maximo
     })
+    
 
+    })
+    
 },
 edit: function (req, res, next) {
     db.Productos.update({
