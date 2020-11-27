@@ -165,14 +165,17 @@ let posicion
     })
     
 },
-edit: function (req, res, next) {
+edit: function (req, res) {
+    let producto = db.Products.findAll()
+        let errors = validationResult(req)
+        if(errors.isEmpty()){
     db.Productos.update({
         nombre : req.body.name,
         precio: req.body.price,
         descuento: req.body.discount,
         descripcion: req.body.description,
         categories_id: req.body.category,
-        imagen: (req.files[0]) ? req.files[0].filename : req.body.image
+        imagen: (req.files[0]) ? req.files[0].filename : producto.image
     },
         {
             where: {
@@ -183,6 +186,7 @@ edit: function (req, res, next) {
         .then(() => {
             res.redirect('/products/admin')
        })
+    }
 },
 eliminar: function (req, res) {
     db.Productos.destroy({

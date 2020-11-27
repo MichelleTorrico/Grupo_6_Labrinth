@@ -6,7 +6,7 @@ let db = require('../database/models');
 
 module.exports = [
     
-  /*  check('nombreCompleto')
+   check('nombreCompleto')
     .isLength({
         min:1
     })
@@ -19,14 +19,17 @@ module.exports = [
 
     body('email')
     .custom(function(value){
-        for(let i = 0; i<dbUsers.length;i++){
-            if(dbUsers[i].email == value){
-                return false
+        return db.Usuarios.findOne({
+            where : {
+                email : value
             }
-        }
-        return true
-    })
-    .withMessage("Este mail ya está registrado"),
+        })
+        .then(user => {
+            if(user){
+                return Promise.reject('Este mail ya está ingresado en nuestros registros')
+            }
+        })
+     }),
 
     check('pass')
     .isLength({
@@ -42,7 +45,18 @@ module.exports = [
         }
         return true
     })
-    .withMessage("Las contraseñas no coinciden"),
+    .withMessage("Las constraseñas no coiciden"),
 
-  */  
+
+    body('avatar')
+    .custom((value,{req}) =>{
+        if(req.fileValidationError){
+            return false
+        }else{
+            return true
+        }
+    })
+    .withMessage("Solo se permite png, jpg, jpeg, gif"),
+
+   
 ]

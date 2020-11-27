@@ -12,7 +12,8 @@ module.exports = {
         
         res.render('registro' , {
             title : 'Registrarse',
-            css: 'registro.css'
+            css: 'registro.css',
+            script : 'registro.js'
         })
     },
     processNuevoUsuario:function(req,res){
@@ -48,7 +49,8 @@ module.exports = {
         
         res.render('login' , {
             title : 'Iniciar sesión',
-            css: 'registro.css'
+            css: 'registro.css',
+            script : 'login.js'
         })
     },
     processLogin:function(req,res){
@@ -82,6 +84,7 @@ module.exports = {
             res.render('login',{
                 title: "Iniciar sesión",
                 css:"registro.css",
+                script : 'login.js',
                 errors:errors.mapped(),
                 old:req.body
             })
