@@ -20,7 +20,7 @@
              (typeof errors != 'undefined' && errors.email)?"is-invalid":
              '' %>" 
              id="exampleInputEmail1" aria-describedby="emailHelp" value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>" placeholder="Correo Electronico" name="email">
-             <small 
+             <small id="errorEmail"
              class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %> </small>
              </div>
              
@@ -29,7 +29,7 @@
             <label for="exampleInputPassword1"></label>
              <input type="password" class="form-control <%= (typeof errors != 'undefined' && errors.pass)?"is-invalid":
              '' %>" id="exampleInputPassword1" placeholder="Contraseña" name="pass">
-             <small class="text-danger"><%= (typeof errors != 'undefined' && errors.pass)?errors.pass.msg: "" %> </small>
+             <small id="errorPass" class="text-danger"><%= (typeof errors != 'undefined' && errors.pass)?errors.pass.msg: "" %> </small>
              
              </div>
              <div class="form-group form-check">
@@ -42,7 +42,7 @@
              <p><a class="link" href="/">Volver a inicio.</a></p>
          </div>
         </form>
-    
+    <span id="msgError"></span>
     
     
     

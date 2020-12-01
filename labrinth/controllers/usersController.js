@@ -64,7 +64,7 @@ module.exports = {
             })
             .then( user => {
                 req.session.user = {
-                    id: user.id,
+                        id: user.id,
                         nombreCompleto: user.nombreCompleto,
                         email: user.email,
                         avatar:user.avatar,
@@ -84,7 +84,7 @@ module.exports = {
             res.render('login',{
                 title: "Iniciar sesión",
                 css:"registro.css",
-                script : 'login.js',
+                
                 errors:errors.mapped(),
                 old:req.body
             })

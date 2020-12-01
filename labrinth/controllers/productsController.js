@@ -55,9 +55,14 @@ module.exports = {
 
     },
     agregar:function(req,res){
-        res.render('carga',{
-            title: "Agregar producto",
-            css:"carga.css"
+        let categoria = db.Categorias.findAll()
+        
+        .then((categoria) => {
+            res.render('carga', 
+            {title : 'Agregar producto',
+            css: "carga.css",
+            categoria : categoria
+           })
         })
 },
 publicar:function(req,res){

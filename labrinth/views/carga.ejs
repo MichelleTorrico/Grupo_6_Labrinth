@@ -26,47 +26,53 @@
                                 <h4 class="mb-3">Datos del Producto</h4>
                                 <form action="" method="POST">
                                     <div class="form-group">
-                                        <label for="exampleFormControlInput1">Nombre del Producto</label>
-                                        <input type="text" class="form-control" id="exampleFormControlInput1"
-                                            placeholder="" name="name">
+                                        <label for="name">Nombre:</label>
+                                        <small id="errorNombre" class="text-danger"><%= (typeof errors != 'undefined' && errors.name)?errors.name.msg: "" %> </small>
+                                        <input class="form-control <%= (typeof old != 'undefined' && old.name)?"is-valid":(typeof errors != 'undefined' && errors.name)?"is-invalid": ""  %>" type="text" name="name" id="name" placeholder="Nombre del Producto" value="<%= (typeof old != 'undefined' && old.name)?old.name:'' %>" >
                                     </div>
                                     <div class="form-group mt-3">
-                                        <label for="exampleFormControlTextarea1">Descripción</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                            name="description"></textarea>
+                                        <label for="description">Descripcion:</label>
+                                        <small id="errorDescription" class="text-danger"><%= (typeof errors != 'undefined' && errors.description)?errors.description.msg: "" %> </small>
+                                        <textarea placeholder="" name="description" id="description" cols="39" rows="5" class="form-control <%= (typeof old != 'undefined' && old.description && !errors.description)?"is-valid":(typeof errors != 'undefined' && errors.description)?"is-invalid": ""  %>"><%= (typeof old != 'undefined' && old.description)?old.description:'' %></textarea>
                                     </div>
 
 
 
                                     <div class="form-row">
                                         <div class="col">
-                                            <label for="">Precio</label>
-                                            <input type="number" class="form-control" name="price">
+                                            <label for="price">Precio:</label>
+                                            <small id="errorPrice" class="text-danger"><%= (typeof errors != 'undefined' && errors.price)?errors.price.msg: "" %> </small>
+                                            
+                                            <input class="form-control <%= (typeof old != 'undefined' && old.price)?"is-valid":(typeof errors != 'undefined' && errors.price)?"is-invalid": ""  %>" type="text" name="price" id="price" placeholder="Precio del Producto" value="<%= (typeof old != 'undefined' && old.price)?old.price:'' %>" >
                                         </div>
                                         <div class="col">
-                                            <label for="">Descuento</label>
-                                            <input type="number" class="form-control" name="discount">
+                                            <label for="discount">Descuento:</label>
+                                            <small id="errorDiscount" class="text-danger"><%= (typeof errors != 'undefined' && errors.discount)?errors.discount.msg: "" %> </small>
+                                            <input class="form-control <%= (typeof old != 'undefined' && old.discount && !errors.discount)?"is-valid":(typeof errors != 'undefined' && errors.precio)?"is-invalid": ""  %>" type="text" name="discount" id="discount" placeholder="Descuento %" value="<%= (typeof old != 'undefined' && old.discount)?old.discount:'' %>" min=1/>
                                         </div>
                                     </div>
 
                                     <br>
 
                                     <div class="form-group">
-                                        <label>Categoría</label>
-                                        <select name="category">
-                                            <option value="anillo">Anillos</option>
-                                            <option value="brazalete">Brazaletes</option>
-                                            <option value="collar">Collares</option>
-                                            <option value="arete">Aretes</option>
-                                            <option value="coleccion">Colección</option>
-
-                                        </select>
+                                        <label for="category">Categoria:</label>
+                                        <small id="errorCategoria" class="text-danger"><%= (typeof errors != 'undefined' && errors.categoria)?errors.categoria.msg: "" %> </small>
+                                        <select name="id_categoria" id="category" class="form-control <%= (typeof old != 'undefined' && old.categoria)?"is-valid":(typeof errors != 'undefined' && errors.categoria)?"is-invalid": ""  %>">
+                                        <option value="" disabled >Elegí la categoría</option>
+                                         <% if (typeof oldCategoria != 'undefined') { %>
+                                        <option value="<%= old.categoria %> " selected><%= oldCategoria %> </option>
+                                        <% } %>
+                                        <% categoria.forEach(categoria => { %>
+                                         <option value="<%= categoria.id %>"><%= categoria.nombre %> </option>
+                                        <% }) %>>
+                                        </select>           
                                     </div>
 
 
                                     <div class="form-group mt-3 ">
-                                        <label for="">Elija una imagen</label>
-                                        <input type="file" class="form-control" name='image'>
+                                        <small id="errorImage" class="text-danger"><%= (typeof errors != 'undefined' && errors.image)?errors.image.msg: "" %> </small>
+                                        <label for="image">Imagen:</label>
+                                        <input class="form-control" type="file" name="image" id="image" value="<%= (typeof old != 'undefined' && old.image)?old.image:'' %>" accept="image/*">
                                     </div>
 
 

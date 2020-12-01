@@ -20,7 +20,7 @@
                  <label for="nombreCompleto"></label>
                  <input type="text" class="form-control <%= (typeof old != 'undefined' && old.nombreCompleto)?"is-valid":(typeof errors != 'undefined' && errors.nombreCompleto)?"is-invalid": ""  %>"
                  id="nombreCompleto" placeholder="Nombre Completo" value="<%= (typeof old != 'undefined' && old.nombreCompleto)?old.nombreCompleto:'' %>" name="nombreCompleto"/>
-                 <small												
+                 <small	id="errorNombre"										
                     class="text-danger"><%= (typeof errors != 'undefined' && errors.nombre)?errors.nombre.msg: "" %>
 				 </small>
                  </div>
@@ -32,7 +32,7 @@
                  id="email"
                  value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>" placeholder="Correo Electronico" name="email"/>
                  
-                 <small							
+                 <small	id="errorEmail"					
                  	class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %>
 				 </small>
                  </div>
@@ -42,7 +42,7 @@
                 <label for="pass"></label>
                  <input type="password" class="form-control <%= (typeof errors != 'undefined' && errors.pass)?"is-invalid": ""  %>"
                  id="pass" placeholder="Contraseña" name="pass"/>
-                 <small												
+                 <small	id="errorPass"											
                  class="text-danger"><%= (typeof errors != 'undefined' && errors.pass)?errors.pass.msg: "" %>
 				 </small>
                  
@@ -53,7 +53,7 @@
                     <label for="pass2"></label>
                      <input type="password" class="form-control <%= (typeof errors != 'undefined' && errors.pass2)?"is-invalid": ""  %>"
                      id="pass2" placeholder="Repetir contraseña" name="pass2"/>
-                     <small
+                     <small id="errorPass2"
                      class="text-danger"><%= (typeof errors != 'undefined' && errors.pass2)?errors.pass2.msg: "" %>
 					 </small>
                      </div>
@@ -62,7 +62,7 @@
                         <input type="file" class="custom-file-input " id="customFileLang"
                             lang="es" name="avatar">
                         <label class="custom-file-label" for="customFileLang">Subir foto de perfil</label>
-                        <small
+                        <small id="errorFoto"
                             class="text-danger"><%= (typeof errorFormato != 'undefined')?errorFormato: "" %>
                         </small>
                     </div>
@@ -73,6 +73,7 @@
              </div>
 
             </form>
+            <span id="msgError"></span>
         
          
         

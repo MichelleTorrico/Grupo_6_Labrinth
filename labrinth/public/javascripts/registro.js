@@ -107,25 +107,13 @@ window.addEventListener('load',function(){
                 errorFoto.innerHTML = errores.foto;
                 this.classList.add('is-invalid')
                 this.value = '';
-                vistaPrevia.src = "";
-            break
-        
-            default:
-                this.classList.remove('is-invalid');
-                this.classList.add('is-valid');
-                errorImagen.innerHTML = "";
-                // Creamos el objeto de la clase FileReader
-                let reader = new FileReader();
-                // Leemos el archivo subido y se lo pasamos a nuestro fileReader
-                reader.readAsDataURL(e.target.files[0]);
-                // Le decimos que cuando este listo ejecute el código interno
-                reader.onload = function(){
-                vistaPrevia.src = reader.result;
-                };
-                this.classList.remove('is-invalid');
-                this.classList.add('is-valid');
-                errorImagen.innerHTML = "";
-
+               
+                break
+                default:
+                    this.classList.remove('is-invalid');
+                    this.classList.add('is-valid');
+                    errorFoto.innerHTML = " ";
+                break;
         }
     })
 
@@ -142,7 +130,7 @@ window.addEventListener('load',function(){
         if(!error){
             formulario.submit()
         }else{
-            msgError.innerHTML = "Los campos señadados son obligatorios"
+            msgError.innerHTML = "Los campos señalados son obligatorios"
         }
     })
 
