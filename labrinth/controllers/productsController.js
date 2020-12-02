@@ -56,14 +56,17 @@ module.exports = {
     },
     agregar:function(req,res){
         let categoria = db.Categorias.findAll()
+        let seccion = db.Secciones.findAll()
         
-        .then((categoria) => {
+         Promise.all([ categoria, seccion])
+               .then(([ categoria, seccion]) =>{
             res.render('carga', 
-            {title : 'Agregar producto',
-            css: "carga.css",
-            categoria : categoria
-           })
-        })
+                    {title : 'Agregar producto',
+                    css: "carga.css",
+                    categoria : categoria,
+                    seccion: seccion
+                   })
+                })
 },
 publicar:function(req,res){
     let errors = validationResult(req);
@@ -73,7 +76,8 @@ publicar:function(req,res){
             nombre: req.body.name.trim(),
            precio: Number(req.body.price),
            descuento:Number(req.body.discount),
-           categoria:req.body.category.trim(),
+           categories_id:req.body.categories_id.trim(),
+           sections_id: req.body.sections_id.trim(),
           descripcion:req.body.description.trim(),
            imagen: req.body.image
         })
@@ -171,7 +175,7 @@ let posicion
     
 },
 edit: function (req, res) {
-    let producto = db.Products.findAll()
+    let producto = db.Productos.findAll()
         let errors = validationResult(req)
         if(errors.isEmpty()){
     db.Productos.update({
@@ -179,8 +183,8 @@ edit: function (req, res) {
         precio: req.body.price,
         descuento: req.body.discount,
         descripcion: req.body.description,
-        categories_id: req.body.category,
-        imagen: (req.files[0]) ? req.files[0].filename : producto.image
+        categoria: req.body.category,
+        imagen: (req.files[0])?req.files[0].filename: producto.image
     },
         {
             where: {

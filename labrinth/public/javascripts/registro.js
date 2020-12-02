@@ -4,9 +4,9 @@ window.addEventListener('load',function(){
     let formulario = document.querySelector('form#registro');
 
     let inputNombreCompleto = formulario.querySelector('input[name="nombreCompleto"]');
-    let inputPass = formulario.elements[0];
-    let inputPass2 = formulario.elements[1];
-    let inputEmail = formulario.elements[2];
+    let inputEmail = formulario.elements[0];
+    let inputPass = formulario.elements[1];
+    let inputPass2 = formulario.elements[2];
     let inputAvatar = formulario.elements[3];
     
 
@@ -37,6 +37,25 @@ window.addEventListener('load',function(){
 
     })
     
+    inputEmail.addEventListener('blur',function(){
+
+        switch (true) {
+            case this.value.length === 0:
+                errorEmail.innerHTML = "El campo email es obligatorio";
+                this.classList.add('is-invalid')
+                break;
+            case !regExEmail.test(this.value) :
+                errorEmail.innerHTML = "Debes escribir un email válido"
+                this.classList.add('is-invalid')
+                break
+            default:
+                this.classList.remove('is-invalid')
+                this.classList.add('is-valid')
+                errorEmail.innerHTML = ""
+                break;
+        }
+
+    })
   
 
     inputPass.addEventListener('blur',function(){
@@ -79,25 +98,7 @@ window.addEventListener('load',function(){
 
     })
 
-    inputEmail.addEventListener('blur',function(){
-
-        switch (true) {
-            case this.value.length === 0:
-                errorEmail.innerHTML = "El campo email es obligatorio";
-                this.classList.add('is-invalid')
-                break;
-            case !regExEmail.test(this.value) :
-                errorEmail.innerHTML = "Debes escribir un email válido"
-                this.classList.add('is-invalid')
-                break
-            default:
-                this.classList.remove('is-invalid')
-                this.classList.add('is-valid')
-                errorEmail.innerHTML = ""
-                break;
-        }
-
-    })
+    
 
     inputAvatar.addEventListener('change',function(e){
 

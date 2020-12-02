@@ -88,6 +88,11 @@ input[type="password"]{
      color: var(--color-rosa);
      text-decoration: underline;
 }
+
+.formulario #msgError{
+    color: red;
+    text-align: center;
+}
 @media(min-width:768px)
 {
     .formulario{
