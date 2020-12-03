@@ -9,26 +9,29 @@
         <div class="col-8 col-md-4 col-lg-4 iconos">
           <ul class='options'>
             
-            <% if (typeof user == "undefined") { %>
+            <% if (typeof user != "undefined" && user.rol == 'user') { %>
               <li><a href="/carrito"><i class="fas fa-shopping-cart"></i></a></li>
               <li><i class="fas fa-search"></i></li>
               <li>
                 <a href="/users/logout">Cerrar sesión <i class="fas fa-sign-in-alt "></i></a>
             </li>
-            <% if (user.rol == 'admin') { %>
+            <% } %>
+            <% if (typeof user != "undefined" && user.rol == 'admin') { %>
               <li><a href="/products/admin"><i class="fas fa-edit"></i></a></li>
               <li>
                 <li><a href="/products/carga"><i class="fas fa-plus"></i></a></li>
               <li>
                 <a href="/users/logout">Cerrar sesión <i class="fas fa-sign-in-alt "></i></a>
             </li>
-              <% } %>
-            <% } else{ %>
+              
+          <%}else{ %>
               <li><i class="fas fa-search"></i></li>
             <li><a href="/users/login"><i class="fas fa-users"></i></a></li>
               
 
               <% } %>
+              
+            
           </ul>
         </div>
         <div class="col-4 col-md-2 col-lg-1 d-flex justify-content-end align-items-center">

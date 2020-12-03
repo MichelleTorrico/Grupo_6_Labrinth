@@ -146,7 +146,7 @@ window.addEventListener('load',function(){
    
         let error = false
         for (let index = 0; index < elementos.length-1; index++) {
-            if(elementos[index].value == 0 && index != 3 ){
+            if(elementos[index].value == 0 ){
                 elementos[index].classList.add('is-invalid');
                error = true;
             }
@@ -154,7 +154,7 @@ window.addEventListener('load',function(){
         if(!error){
             formulario.submit()
         }else{
-            msgError.innerHTML = "Los campos señalados son obligatorios"
+            msgError.innerHTML = "*Los campos señalados son obligatorios*"
         }
    
 
