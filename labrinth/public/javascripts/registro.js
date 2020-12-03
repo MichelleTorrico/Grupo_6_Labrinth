@@ -4,10 +4,10 @@ window.addEventListener('load',function(){
     let formulario = document.querySelector('form#registro');
 
     let inputNombreCompleto = formulario.querySelector('input[name="nombreCompleto"]');
-    let inputEmail = formulario.elements[0];
-    let inputPass = formulario.elements[1];
-    let inputPass2 = formulario.elements[2];
-    let inputAvatar = formulario.elements[3];
+    let inputEmail = formulario.elements[1];
+    let inputPass = formulario.elements[2];
+    let inputPass2 = formulario.elements[3];
+    let inputAvatar = formulario.elements[4];
     
 
     let errores = {};
@@ -24,7 +24,7 @@ window.addEventListener('load',function(){
                 errorNombre.innerHTML = "Insertar nombre completo OBLIGATORIO";
                 this.classList.add('is-invalid')
                 break;
-            case this.value.trim().length <=3:
+            case this.value.trim().length <=2:
                 errorNombre.innerHTML = "Tenés que poner al menos tres letras"
                 this.classList.add('is-invalid')
                 break
@@ -123,7 +123,7 @@ window.addEventListener('load',function(){
         let elementos = formulario.elements
         let error = false
         for (let index = 0; index < elementos.length-1; index++) {
-            if(elementos[index].value == 0){
+            if(elementos[index].value == 0 && index != 4){
                 elementos[index].classList.add('is-invalid');
                error = true;
             }

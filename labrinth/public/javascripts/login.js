@@ -72,7 +72,7 @@ window.addEventListener('load',function(){
         if(!error){
             formulario.submit()
         }else{
-            msgError.innerHTML = "Los campos señadados son obligatorios"
+            msgError.innerHTML = "*Los campos señalados son obligatorios*"
         }
     
     })

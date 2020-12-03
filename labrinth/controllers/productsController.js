@@ -1,5 +1,4 @@
 const path = require('path');
-const dbProductos = require(path.join(__dirname,'..','data','dbProductos'));
 const fs = require('fs');
 
 const {validationResult} = require('express-validator');
@@ -64,7 +63,8 @@ module.exports = {
                     {title : 'Agregar producto',
                     css: "carga.css",
                     categoria : categoria,
-                    seccion: seccion
+                    seccion: seccion,
+                    script: 'carga.js'
                    })
                 })
 },
@@ -134,6 +134,9 @@ show:function(req,res){
     let minimo = db.Productos.min('id')
     let maximo = db.Productos.max('id')
 
+    let categoria = db.Categorias.findAll()
+    let seccion = db.Secciones.findAll()
+
     let productos = db.Productos.findAll({
         include: [
             {
@@ -144,8 +147,8 @@ show:function(req,res){
 
 
     
-    Promise.all([ producto, productos, minimo, maximo])
-       .then(([ producto, productos, minimo ,maximo]) =>{
+    Promise.all([ producto, productos, minimo, maximo, categoria, seccion])
+       .then(([ producto, productos, minimo ,maximo, categoria, seccion]) =>{
         console.log(minimo+" -- "+ producto.id+" -- "+ maximo)
 
 let posicion 
@@ -166,6 +169,8 @@ let posicion
         activeEdit:activeEdit,
         showEdit:showEdit,
         showDetail:showDetail,
+        categoria : categoria,
+        seccion: seccion,
         minimo: minimo,
         maximo: maximo
     })
@@ -176,15 +181,17 @@ let posicion
 },
 edit: function (req, res) {
     let producto = db.Productos.findAll()
-        let errors = validationResult(req)
-        if(errors.isEmpty()){
-    db.Productos.update({
-        nombre : req.body.name,
-        precio: req.body.price,
-        descuento: req.body.discount,
-        descripcion: req.body.description,
-        categoria: req.body.category,
-        imagen: (req.files[0])?req.files[0].filename: producto.image
+    let errors = validationResult(req);
+
+    if(errors.isEmpty()){
+        db.Productos.update({
+            nombre: req.body.name,
+           precio: req.body.price,
+           descuento:req.body.discount,
+           categories_id:req.body.categories_id,
+           sections_id: req.body.sections_id,
+          descripcion:req.body.description,
+           imagen: producto.image
     },
         {
             where: {

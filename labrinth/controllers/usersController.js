@@ -65,7 +65,7 @@ module.exports = {
             .then( user => {
                 req.session.user = {
                         id: user.id,
-                        nombreCompleto: user.nombreCompleto,
+                        nombreCompleto: user.nombre_completo,
                         email: user.email,
                         avatar:user.avatar,
 			            rol:user.rol

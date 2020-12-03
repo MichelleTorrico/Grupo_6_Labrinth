@@ -12,7 +12,7 @@ router.post('/registro',upImagesUsers.any(),registroValidator,users.processNuevo
 router.get('/login', users.login)
 router.post('/login',loginValidator,users.processLogin);
 
-router.get('/profile',users.perfil);
+router.get('/profile/:id',users.perfil);
 router.put('/actPerfil/:id',upImagesUsers.any(),users.actPerfil);
 
 router.get('/logout',users.logout);
