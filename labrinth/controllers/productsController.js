@@ -83,7 +83,7 @@ publicar:function(req,res){
         })
         
         .then(()=>{
-            return res.redirect('/products')
+            return res.redirect('/products/admin')
         })
         .catch(error =>{
             res.send(error)

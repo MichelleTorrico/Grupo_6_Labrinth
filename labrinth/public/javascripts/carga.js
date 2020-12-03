@@ -92,14 +92,14 @@ window.addEventListener('load',function(){
 
         switch (true) {
             case this.value.length === 0:
-                errorCategoria.innerHTML = "La categoria es obligatoria";
+                errorCategory.innerHTML = "La categoria es obligatoria";
                 this.classList.add('is-invalid')
                 break;
            
             default:
                 this.classList.remove('is-invalid')
                 this.classList.add('is-valid')
-                errorCategoria.innerHTML = ""
+                errorCategory.innerHTML = ""
                 break;
         }
     })
@@ -146,7 +146,7 @@ window.addEventListener('load',function(){
    
         let error = false
         for (let index = 0; index < elementos.length-2; index++) {
-            if(elementos[index].value == 0 ){
+            if(elementos[index].value == 0 && index != 3){
                 elementos[index].classList.add('is-invalid');
                error = true;
             }

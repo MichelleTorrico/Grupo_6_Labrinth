@@ -1,3 +1,8 @@
+@import "footer.css";
+@import "header.css";
+@import "style.css";
+
+
 /*
 --VARIABLES--
 */
@@ -16,7 +21,7 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    
     margin: 0;
    background-color: white;
     background-size: cover;
