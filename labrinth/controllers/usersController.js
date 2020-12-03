@@ -119,7 +119,7 @@ module.exports = {
         })
         .then( result => {
             console.log(result)
-            return res.redirect('/users/perfil')
+            return res.redirect('/')
         })
         .catch( err => {
             res.send(err)

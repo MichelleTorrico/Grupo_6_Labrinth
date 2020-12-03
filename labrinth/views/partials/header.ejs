@@ -15,8 +15,8 @@
               <li>
                 <a href="/users/logout">Cerrar sesión <i class="fas fa-sign-in-alt "></i></a>
             </li>
-            <% } %>
-            <% if (typeof user != "undefined" && user.rol == 'admin') { %>
+           
+          <% }else if (typeof user != "undefined" && user.rol == 'admin') { %>
               <li><a href="/products/admin"><i class="fas fa-edit"></i></a></li>
               <li>
                 <li><a href="/products/carga"><i class="fas fa-plus"></i></a></li>

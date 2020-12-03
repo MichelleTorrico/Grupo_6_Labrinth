@@ -19,7 +19,7 @@
                     <div class="row">
                         <div class="col-12 "> <br>
                             <h4 class="mb-3">Datos:</h4>
-                            <form action="/users/actPerfil/<%= usuario.id %> ?_method=PUT" method="POST"
+                            <form action="/users/actPerfil/:id<%= usuario.id %> ?_method=PUT" method="POST"
                               enctype="multipart/form-data">
                               <div class="form-row">
                                 <div class="col-12 col-md-4 mt-3 d-flex flex-column align-items-center">
@@ -52,7 +52,7 @@
                                     <button type="button" class="btn-sm btn-secondary m-1"><a href="/" class="text-light">Salir
                                         sin
                                         guardar</a></button>
-                                    <button type="submit" class="btn-sm btn-primary botonAct">Actualizar datos</button>
+                                    <button type="submit" class="btn-sm btn-primary botonAct"><a href="/">Actualizar datos</a></button>
                                   </div>
                                 </div>
                               </div>
