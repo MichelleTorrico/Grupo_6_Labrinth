@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+    <!DOCTYPE html>
+    <html lang="es">
+      <%- include('partials/head') %> 
+    
+    <body>
+      <!--COMIENZA HEADER-->
+      <%- include('partials/header') %>
+
+      <br>
+      <br>
+
+      <section class="principal">
+        <div class="container">
+            <div class="row productos">
+              
+                
+    
+              <% productos.forEach(producto => { %>
+     
+              <div class="col-12 col-md-6 col-lg-3">
+                <div class="contenido">
+                  <figure>
+                    <a href="/products/detalle/<%= producto.id %> "
+                      ><img src="/images/products/<%= producto.imagen %> " alt=""
+                    /></a>
+                  </figure>
+                  <article>
+                    <h2>
+                      $<%- (producto.precio - producto.precio * producto.descuento / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %>
+                    </h2>
+                    <% if (producto.descuento !=0) { %>
+                      <span><%= producto.descuento %>% OFF</span>
+                    <% } %>
+                 
+                    <p><%= producto.nombre %> </p>
+                    
+                  </article>
+                </div>
+              </div>
+              <% }) %>
+              
+            </div>
+    
+            
+            </div>
+        </div>
+      </section>
+
+
+
+      <br><br>
+
+    
+
+      <%- include('partials/footer') %>
+</body>
+</html>

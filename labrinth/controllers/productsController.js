@@ -53,6 +53,22 @@ module.exports = {
 
 
     },
+
+    categoria: function(req,res){
+        db.Productos.findAll({
+            where : {
+                    categories_id : req.params.id
+                }
+        })
+        .then(productos => {
+            res.render('categorias',{
+                title: 'Categoria',
+                css: 'products.css',
+                productos:productos
+            })
+        })
+
+    },
     agregar:function(req,res){
         let categoria = db.Categorias.findAll()
         let seccion = db.Secciones.findAll()

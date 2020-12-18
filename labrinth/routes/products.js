@@ -6,6 +6,8 @@ const cargaValidator = require('../validations/cargaValidator');
 
 router.get('/', products.listar);
 router.get('/detalle/:id', products.detalle);
+router.get('/categorias/:id', products.categoria);
+
 
 router.get('/admin', products.administrar);
 router.put('/edit/:id',products.edit)
