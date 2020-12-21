@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 let users = require('../controllers/usersController')
+
 const upImagesUsers = require('../middlewares/upImagesUsers')
 const registroValidator = require('../validations/registroValidator')
 const loginValidator = require('../validations/loginValidator');
