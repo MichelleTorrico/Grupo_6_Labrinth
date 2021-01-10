@@ -26,7 +26,7 @@ module.exports = {
                 email: req.body.email.trim(),
 		        avatar: (req.files[0])?req.files[0].filename:"default.png",
                 password:bcrypt.hashSync(req.body.pass,10),
-                rol:"admin"
+                rol:"user"
             })
             .then(usuario => {
                 //console.log(usuario)
