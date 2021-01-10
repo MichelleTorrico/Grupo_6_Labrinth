@@ -36,7 +36,14 @@ module.exports = {
 
 
             db.Productos.findAll({
-                where: {categories_id: producto.categories_id}
+                where: {
+                    [Op.or]:[
+                        {'nombre': {[Op.notLike]: producto.nombre}},
+                    ],
+                    categories_id: producto.categories_id,
+                },
+                limit:3
+
             })
 
             .then(function(productos){
@@ -73,14 +80,12 @@ module.exports = {
     },
     buscar:function(req,res){
         db.Productos.findAll({
-            where : {
-                [Op.or] : [
-                   {
-                        nombre:req.body.buscar
-                    },
-                    
+            where: {
+                [Op.or]:[
+                    {'nombre': {[Op.like]: `%${req.body.buscar}%`}},
                 ]
             },
+
            
         })
         .then(result => {

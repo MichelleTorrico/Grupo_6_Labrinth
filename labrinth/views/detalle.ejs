@@ -69,50 +69,29 @@
               <h2>ARTICULOS SIMILARES</h2>
           </div>
 
-          <div class="col-12 col-md-4 ">
+          <% productos.forEach(producto => { %>
+ 
+            <div class="col-12 col-md-6 col-lg-3">
               <div class="contenido">
-                  <figure>
-                      <a href=""><img src="/images/products/collar2.jpg" alt=""></a>
-                  </figure>
-                  <article>
-                      <h2>
-                          $9.500
-                      </h2>
-                      <span>5% OFF</span> <br>
-                      <p>Collar Two Hearts & One Soul </p>
-                  </article>
+                <figure>
+                  <a href="/products/detalle/<%= producto.id %> "
+                    ><img src="/images/products/<%= producto.imagen %> " alt=""
+                  /></a>
+                </figure>
+                <article>
+                  <h2>
+                    $<%- (producto.precio - producto.precio * producto.descuento / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %>
+                  </h2>
+                  <% if (producto.descuento !=0) { %>
+                    <span><%= producto.descuento %>% OFF</span>
+                  <% } %>
+               
+                  <p><%= producto.nombre %> </p>
+                  
+                </article>
               </div>
-          </div>
-
-          <div class="col-12 col-md-4 ">
-              <div class="contenido">
-                  <figure>
-                      <a href=""><img src="/images/products/collar3.jpg" alt=""></a>
-                  </figure>
-                  <article>
-                      <h2>
-                          $10.500
-                      </h2>
-                      <span>5% OFF</span>
-                      <p>Collar One Heart & You</p>
-                  </article>
-              </div>
-          </div>
-
-          <div class="col-12 col-md-4 ">
-              <div class="contenido">
-                  <figure>
-                      <a href=""><img src="/images/products/collar4.jpg" alt=""></a>
-                  </figure>
-                  <article>
-                      <h2>
-                          $13.500
-                      </h2>
-                      <span>5% OFF</span>
-                      <p>Collar A Thousand Wishes</p>
-                  </article>
-              </div>
-          </div>
+            </div>
+            <% }) %>
 
       </div>
 </section>
