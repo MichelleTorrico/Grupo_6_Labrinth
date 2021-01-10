@@ -21,7 +21,41 @@ header{
  
     
  }
- 
+
+ header .formBusqueda{
+    text-align: center;
+ }
+ header .inputBuscar{
+   margin-top: 40px;
+   border-radius: 5px;
+   
+   border-color: var(--color-violeta);
+ }
+ header .inputBuscar:focus{
+   margin-top: 40px;
+   background-color: var(--color-robebe);
+
+   
+ }
+ header .botonBuscar{
+   background-color:white;
+   
+   border-radius: 5px;
+   border-color: var(--color-violeta);
+   
+ }
+
+
+ header .iconoBuscar{
+   color: var(--color-violeta);
+   
+ }
+
+ header .iconoBuscar:hover{
+   color: var(--color-rochicle);
+   
+ }
+
  header ul{
     overflow: hidden;
  }

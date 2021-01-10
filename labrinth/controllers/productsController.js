@@ -3,6 +3,8 @@ const fs = require('fs');
 
 const {validationResult} = require('express-validator');
 const db = require('../database/models');
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 
 
@@ -65,6 +67,27 @@ module.exports = {
                 title: 'Categoria',
                 css: 'products.css',
                 productos:productos
+            })
+        })
+
+    },
+    buscar:function(req,res){
+        db.Productos.findAll({
+            where : {
+                [Op.or] : [
+                   {
+                        nombre:req.body.buscar
+                    },
+                    
+                ]
+            },
+           
+        })
+        .then(result => {
+            res.render('products',{
+                title: 'Resultados',
+                css: 'products.css',
+                productos:result
             })
         })
 

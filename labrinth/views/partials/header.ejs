@@ -1,17 +1,30 @@
 <header class="container-fluid">
     <div class="container">
       <div class="row">
-        <div class="col-12 col-md-6 col-lg-6 logo">
+        <div class="col-12 col-md-4 col-lg-5 logo">
           <!--LOGOTIPO-->
           <a href="/"><img src="/images/logos/LogoHeader.png" alt=""></a>
         </div>
         
-        <div class="col-8 col-md-4 col-lg-4 iconos">
+        <div class="col-12 col-md-2 ">
+          <form action="/products/buscar" method="POST" class="formBusqueda">
+            <input
+              type="text"
+              name="buscar"
+              placeholder="Buscar productos" class="col-8 col-md-8 inputBuscar" 
+            />
+            <button type="submit" class="botonBuscar">
+              <i class="fas fa-search iconoBuscar"></i>
+            </button>
+          </form>
+        </div>
+        <div class="col-8 col-md-3 col-lg-3 iconos">
+          
           <ul class='options'>
             
             <% if (typeof user != "undefined" && user.rol == 'user') { %>
               <li><a href="/carrito"><i class="fas fa-shopping-cart"></i></a></li>
-              <li><i class="fas fa-search"></i></li>
+              
               <li>
                 <a href="/users/logout">Cerrar sesión <i class="fas fa-sign-in-alt "></i></a>
             </li>
@@ -25,8 +38,9 @@
             </li>
               
           <%}else{ %>
-              <li><i class="fas fa-search"></i></li>
-            <li><a href="/users/login"><i class="fas fa-users"></i></a></li>
+             
+            <li><a href="/users/login">Iniciar sesión <i class="fas fa-users"></i></a></li>
+            
               
 
               <% } %>
